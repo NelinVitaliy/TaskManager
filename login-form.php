@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if(isset($_SESSION['user'])) { 
-    header('Location: /show.html');
+if(isset($_SESSION['user_id'])) { 
+    header('Location: /index.php');
     exit;
 }
 ?>
@@ -34,7 +34,7 @@ if(isset($_SESSION['user'])) {
         <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" name="password">
         <div class="checkbox mb-3">
           <label>
-            <input type="checkbox" value="remember-me">Запомнить меня
+              <input type="checkbox"value="remember-me">Запомнить меня
           </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>

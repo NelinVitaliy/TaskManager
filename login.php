@@ -4,20 +4,20 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 //проверка данных 
-foreach($_POST as $input) {
-	if(empty($input)) {
-		include 'errors.php';
-		exit;
-	}
+ foreach($_POST as $input) {
+ if(empty($input)) {
+ include 'errors.php';
+ exit;
+ }
 }
 
 //Подготовка и выполнение запроса к БД
-$pdo = new PDO('mysql:host=localhost;dbname=task-manager', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=task_manager', 'root', '');
 $sql = 'SELECT id,username,email from users where email=:email AND password=:password';
 $statement = $pdo->prepare($sql);
 $statement->execute([
-	':email'	=>	$email,
-	':password'	=>	md5($password)
+ ':email' => $email,
+ ':password' => md5($password)
 ]);
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
@@ -34,5 +34,5 @@ $_SESSION['user_id'] = $user['id'];
 $_SESSION['email'] = $user['email'];
 
 //переадресовываем на главную
-header('Location: /show.html');
+header('Location: /index.php');
 exit;
