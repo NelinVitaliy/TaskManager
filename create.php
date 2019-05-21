@@ -2,7 +2,6 @@
 session_start();
 
 if(!isset($_SESSION['user_id'])) { 
-    header('Location: /login-form.php');
     exit;
 }
 
@@ -21,7 +20,7 @@ foreach($_POST as $input) {
 
 //Картинка не загружена
 if($image['error'] == 4) {
-    $errorMessage = 'Load picture';
+    $errorMessage = 'Загрузите картинку';
          include 'errors.php';
          exit;
  }
@@ -34,7 +33,7 @@ if($image['error'] == 4) {
  $pdo = new PDO('mysql:host=localhost;dbname=task_manager', 'root', '');
  $sql = "INSERT INTO tasks (title, description, image, user_id) VALUES (:title, :description, :image, :user_id)";
  $statement = $pdo->prepare($sql);
- $task  = $statement -> execute([
+ $tasks  = $statement -> execute ([
                   ":title" => $title,
             ":description" => $description,
                   ":image" => $image['name'],
@@ -43,3 +42,4 @@ if($image['error'] == 4) {
  );
 
  header('Location: /index.php');
+

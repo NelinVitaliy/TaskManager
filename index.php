@@ -14,9 +14,6 @@ $statement->execute([
             ':user_id' =>  $_SESSION['user_id']
           ]
 ); 
-
-$tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 
 <!doctype html>
