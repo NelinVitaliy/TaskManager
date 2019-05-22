@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 20 2019 г., 19:54
+-- Время создания: Май 22 2019 г., 06:23
 -- Версия сервера: 10.3.13-MariaDB
 -- Версия PHP: 7.1.22
 
@@ -40,7 +40,8 @@ CREATE TABLE `tasks` (
 --
 
 INSERT INTO `tasks` (`title`, `description`, `image`, `user_id`) VALUES
-('1212', 'vfvdffbgbg', 'yvLOONbqgjA.jpg', 36);
+('Запись №1', 'Какой то текст для проверки базы данных', '23105-R3L8T8D-600-zvezdnoe-nebo-19-2-990x6121.jpg', 39),
+('Запись №2', 'Проверка БД', '22955-R3L8T8D-600-zvezdnoe-nebo-19-4-990x560.jpg', 40);
 
 -- --------------------------------------------------------
 
@@ -60,7 +61,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(59, 'Nelin', 'nelin@mail.ru', 'c5fe25896e49ddfe996db7508cf00534'),
+(59, 'Nelin', 'nelin@mail', 'c5fe25896e49ddfe996db7508cf00534'),
 (70, 'qqq', 'qqq@mail', 'c5fe25896e49ddfe996db7508cf00534');
 
 --
@@ -87,7 +88,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
