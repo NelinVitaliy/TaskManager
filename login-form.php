@@ -26,7 +26,7 @@ if(isset($_SESSION['user_id'])) {
   <body>
     <div class="form-wrapper text-center">
       <form class="form-signin" action="login.php" method="post">
-        <img class="mb-4" src="assets/img/elephant.svg" alt="" width="92" height="92">
+        <img class="mb-4" src="assets/img/aperture.png" alt="" width="92" height="92">
         <h1 class="h3 mb-3 font-weight-normal">Авторизация</h1>
         <label for="inputEmail" class="sr-only">Email</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email" autofocus name="email">
