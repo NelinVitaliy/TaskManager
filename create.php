@@ -31,14 +31,14 @@ if($image['error'] == 4) {
 
  //Подготовка и выполнение запроса к БД
  $pdo = new PDO('mysql:host=localhost;dbname=task_manager', 'root', '');
- $sql = "INSERT INTO tasks (title, description, image) VALUES (:title, :description, :image)";
+ $sql = "INSERT INTO tasks (title, description, image, user_id) VALUES (:title, :description, :image, :user_id)";
  $statement = $pdo->prepare($sql);
  $tasks  = $statement -> execute ([
                   ":title" => $title,
             ":description" => $description,
                   ":image" => $image['name'],
+                ":user_id" => $_SESSION['user_id']
                             ]
  );
 
  header('Location: /index.php');
-

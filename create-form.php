@@ -26,7 +26,7 @@ if(!isset($_SESSION['user_id'])) {
   <body>
     <div class="form-wrapper text-center">
       <form class="form-signin" method="post" action="create.php" enctype="multipart/form-data">
-        <img class="mb-4" src="assets/img/elephant.svg" alt="" width="92" height="92">
+        <img class="mb-4" src="assets/img/aperture.png" alt="" width="92" height="92">
         <h1 class="h3 mb-3 font-weight-normal">Добавить запись</h1>
         <label for="inputEmail" class="sr-only">Название</label>
         <input type="text" class="form-control" placeholder="Название" name="title">
