@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
+<<<<<<< HEAD
 -- Время создания: Июн 19 2019 г., 07:06
+=======
+-- Время создания: Июн 17 2019 г., 06:07
+>>>>>>> de8eaf37f5320cfe356df0983bfa4d2af3d78928
 -- Версия сервера: 10.3.13-MariaDB
 -- Версия PHP: 7.1.22
 
@@ -41,9 +45,16 @@ CREATE TABLE `tasks` (
 --
 
 INSERT INTO `tasks` (`id`, `title`, `description`, `image`, `user_id`) VALUES
+<<<<<<< HEAD
 (45, 'Number 1', 'Какой то текст', '26855-R3L8T8D-600-5002074.jpg', 59),
 (49, 'Vitalya 1', 'Описание темы и страницы', '23005-R3L8T8D-600-zvezdnoe-nebo-19-8-990x660.jpg', 59),
 (50, '111', 'Какой то текст для примера', 'DSC00655.JPG', 74);
+=======
+(45, 'Number 1', 'бла бла ', '26855-R3L8T8D-600-5002074.jpg', 59),
+(46, 'kjhkjkjn', 'jljnkdvdvd', '27705-R3L8T8D-600-5001865.jpg', 59),
+(48, '#1', 'бла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла бла', '23105-R3L8T8D-600-zvezdnoe-nebo-19-2-990x6121.jpg', 59),
+(49, 'Vitalya 1', 'Описание темы и страницы', '23005-R3L8T8D-600-zvezdnoe-nebo-19-8-990x660.jpg', 59);
+>>>>>>> de8eaf37f5320cfe356df0983bfa4d2af3d78928
 
 -- --------------------------------------------------------
 
@@ -91,7 +102,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `tasks`
 --
 ALTER TABLE `tasks`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+>>>>>>> de8eaf37f5320cfe356df0983bfa4d2af3d78928
 
 --
 -- AUTO_INCREMENT для таблицы `users`
