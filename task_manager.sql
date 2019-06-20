@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 22 2019 г., 06:23
+-- Время создания: Июн 20 2019 г., 06:46
 -- Версия сервера: 10.3.13-MariaDB
 -- Версия PHP: 7.1.22
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tasks` (
+  `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
@@ -39,9 +40,11 @@ CREATE TABLE `tasks` (
 -- Дамп данных таблицы `tasks`
 --
 
-INSERT INTO `tasks` (`title`, `description`, `image`, `user_id`) VALUES
-('Запись №1', 'Какой то текст для проверки базы данных', '23105-R3L8T8D-600-zvezdnoe-nebo-19-2-990x6121.jpg', 39),
-('Запись №2', 'Проверка БД', '22955-R3L8T8D-600-zvezdnoe-nebo-19-4-990x560.jpg', 40);
+INSERT INTO `tasks` (`id`, `title`, `description`, `image`, `user_id`) VALUES
+(45, 'Number 1', 'Какой то текст', '26855-R3L8T8D-600-5002074.jpg', 59),
+(49, 'Vitalya 1', 'Описание темы и страницы', '23005-R3L8T8D-600-zvezdnoe-nebo-19-8-990x660.jpg', 59),
+(50, '111', 'Какой то текст для примера', 'DSC00655.JPG', 74),
+(51, '1213', 'что то  там\r\n', 'Номенклатура карт.jpg', 73);
 
 -- --------------------------------------------------------
 
@@ -62,7 +65,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 (59, 'Nelin', 'nelin@mail', 'c5fe25896e49ddfe996db7508cf00534'),
-(70, 'qqq', 'qqq@mail', 'c5fe25896e49ddfe996db7508cf00534');
+(73, 'Elya', 'elya@mail', 'c5fe25896e49ddfe996db7508cf00534'),
+(74, 'vitalya', 'vitalya@mail', 'c5fe25896e49ddfe996db7508cf00534');
 
 --
 -- Индексы сохранённых таблиц
@@ -72,7 +76,7 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 -- Индексы таблицы `tasks`
 --
 ALTER TABLE `tasks`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `users`
@@ -88,13 +92,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

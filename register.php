@@ -43,4 +43,5 @@ $result = $statement->execute($_POST);
  }
 
 //Переадресация на login-form.php (авторизацию)
-header("Location:\login-form.php"); exit;
+header("Location:\login-form.php"); 
+exit;
