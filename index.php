@@ -43,15 +43,7 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
             <div class="col-sm-4 offset-md-1 py-4">
               <h4 class="text-white">nelin@example.com</h4>
               <ul class="list-unstyled">
-<<<<<<< HEAD
                 <li><a href="\logout.php" class="text-white">Exit</a></li>
-=======
-<<<<<<< HEAD
-                <li><a href="\logout.php" class="text-white">Exit</a></li>
-=======
-                <li><a href="\login-form.php" class="text-white">Exit</a></li>
->>>>>>> de8eaf37f5320cfe356df0983bfa4d2af3d78928
->>>>>>> cd5dcb210bf0507c1111c8657c8498be51ef4322
               </ul>
             </div>
           </div>

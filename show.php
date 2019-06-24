@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['user_id'])) { 
+    header('Location: /login-form.php');
+    exit;
+}
+
+ $id = $_GET['id'];
+
+//подготовка и выполнение запроса к БД
+$pdo = new PDO('mysql:host=localhost;dbname=task_manager', 'root', '');
+$sql = 'SELECT * from tasks where id=:id';
+$statement = $pdo->prepare($sql);
+$statement->execute([
+          ':id'  =>  $id,
+            ]);
+$tasks = $statement->fetch(PDO::FETCH_ASSOC);
+?>
+
 
 <!doctype html>
 <html lang="en">
@@ -17,10 +37,10 @@
 
   <body>
     <div class="form-wrapper text-center">
-      <img src="assets/img/landscape.svg" alt="" width="500">
-      <h2>Lorem ipsum</h2>
+      <img src="<?php echo $task['image'];?>" alt="" width="500">
+      <h2><?php echo $task['title'];?></h2>
       <p>
-        Пройти первый а потом второй урок. Закрепить практикой и написать проект сначала без подглядываний.
+        <?php echo $task['description'];?>
       </p>
     </div>
   </body>
