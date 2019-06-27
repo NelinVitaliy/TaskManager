@@ -15,7 +15,7 @@ $statement = $pdo->prepare($sql);
 $statement->execute([
           ':id'  =>  $id,
             ]);
-$tasks = $statement->fetch(PDO::FETCH_ASSOC);
+$task = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -37,7 +37,7 @@ $tasks = $statement->fetch(PDO::FETCH_ASSOC);
 
   <body>
     <div class="form-wrapper text-center">
-      <img src="<?php echo $task['image'];?>" alt="" width="500">
+      <img src="http://taskmanager/uploads/<?php echo $task['image'];?>" alt="" width="500">
       <h2><?php echo $task['title'];?></h2>
       <p>
         <?php echo $task['description'];?>

@@ -51,4 +51,6 @@ $task = $statement->execute([
 	":description"	=>	$description,
 	":image"	=>	$image['name'],
 	":id"	=>	$id
-]);
+          ]);
+
+exit;

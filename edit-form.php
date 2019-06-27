@@ -36,7 +36,7 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
 
   <body>
     <div class="form-wrapper text-center">
-      <form class="form-signin" method="post" action="edit.php" enctype="multipart/form-data">
+      <form class="form-signin" method="post" action="edit.php?id=<?php echo $task['id']; ?>" enctype="multipart/form-data">
         <img class="mb-4" src="assets/img/aperture.png" alt="" width="90" height="90">
         <h1 class="h3 mb-3 font-weight-normal">Добавить запись</h1>
         <label for="inputEmail" class="sr-only">Название</label>
