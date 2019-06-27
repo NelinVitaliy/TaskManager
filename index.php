@@ -81,7 +81,7 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
             <?php foreach($tasks as $task):;?>
              <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="http://taskmanager/uploads/<?php echo $task['image'];?>">
+                <img class="card-img-top" src="uploads/<?php echo $task['image'];?>">
                 <div class="card-body">
                   <p class="card-text"><?php echo $task['title'];?></p>
                   <div class="d-flex justify-content-between align-items-center">

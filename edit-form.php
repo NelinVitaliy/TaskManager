@@ -37,14 +37,21 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
   <body>
     <div class="form-wrapper text-center">
       <form class="form-signin" method="post" action="edit.php?id=<?php echo $task['id']; ?>" enctype="multipart/form-data">
+
         <img class="mb-4" src="assets/img/aperture.png" alt="" width="90" height="90">
+
         <h1 class="h3 mb-3 font-weight-normal">Добавить запись</h1>
+
         <label for="inputEmail" class="sr-only">Название</label>
-        <input type="text" id="inputEmail" class="form-control" placeholder="Название" required value="<?php echo $task['title'];?>">
+
+        <input type="text" name="title" id="inputEmail" class="form-control" placeholder="Название" required value="<?php echo $task['title'];?>">
+
         <label for="inputEmail" class="sr-only">Описание</label>
         <textarea name="description" class="form-control" cols="30" rows="10" placeholder="Описание"><?php echo $task['description'];?></textarea>
-        <input type="file">
-        <img src="http://taskmanager/uploads/<?php echo $task['image'];?>" alt="" width="400" class="mb-3">
+
+        <input type="file" name="image"> 
+        <img src="uploads/<?php echo $task['image'];?>" alt="" width="400" class="mb-3">
+
         <button class="btn btn-lg btn-success btn-block" type="submit">Редактировать</button>
 
         <p class="mt-5 mb-3 text-muted">&copy; 2019</p>

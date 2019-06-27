@@ -2,13 +2,14 @@
 //Пропускаем авторизованного пользователя
 session_start();
 
-if(!isset($_SESSION['user_id'])) { 
-	header('Location: /index.php');
+if(!isset($_SESSION['user_id'])) {
 	exit;
 }
 
 //Получение ID
 $id = $_GET['id'];
+
+
 
 //Подготовка и выполнение запроса к БД
 $pdo = new PDO('mysql:host=localhost;dbname=task_manager', 'root', '');
@@ -20,8 +21,8 @@ $statement->execute([
 $tasks = $statement->fetch(PDO::FETCH_ASSOC);
 
 //Удаляем текущую картинку, если есть
-if(file_exists('uploads/' . $task['image'])) {
-	    unlink('uploads/' . $task['image']);
+if(file_exists('/uploads/' . $task['image'])) {
+	    unlink('/uploads/' . $task['image']);
 }
 
 
@@ -32,4 +33,6 @@ $statement->execute([
 	':id'	=>	$id,
 ]);
 
+
+header('Location: /index.php');
 exit;
