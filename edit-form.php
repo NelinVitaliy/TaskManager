@@ -1,14 +1,12 @@
 <?php
-session_start();
+//Проверка авторизованного пользователя
+require_once"function.php";
+checkLogin(user_id);
 
-if(!isset($_SESSION['user_id'])) { 
-    header('Location: /login-form.php');
-    exit;
-}
 
 $id = $_GET['id'];
 
-//подготовка и выполнение запроса к БД
+//Подготовка и выполнение запроса к БД
 $pdo = new PDO('mysql:host=localhost;dbname=task_manager', 'root', '');
 $sql = 'SELECT * from tasks where id=:id';
 $statement = $pdo->prepare($sql);

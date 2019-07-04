@@ -1,10 +1,7 @@
 <?php
-session_start();
-
-if(!isset($_SESSION['user_id'])) { 
-    header('Location: /create.php');
-    exit;
-}
+//Проверка авторизованного пользователя
+require_once"function.php";
+checkLogin(user_id);
 ?>
 
 <!doctype html>

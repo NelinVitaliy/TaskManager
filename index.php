@@ -1,10 +1,7 @@
 <?php
-session_start();
-
-if(!isset($_SESSION['user_id'])) { 
-    header('Location: /login-form.php');
-    exit;
-}
+//Проверка авторизованного пользователя
+require_once"function.php";
+checkLogin(user_id);
 
 //подготовка и выполнение запроса к БД
 $pdo = new PDO('mysql:host=localhost;dbname=task_manager', 'root', '');

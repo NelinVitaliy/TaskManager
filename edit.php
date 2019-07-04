@@ -1,9 +1,7 @@
 <?php
-session_start();
-
-if(!isset($_SESSION['user_id'])) {
-	exit;
-}
+//Пропускаем только авторизованного пользователя
+require_once"function.php";
+checkLogin(user_id);
 
 //Получение данных из $_POST и $_FILES
 $title = $_POST['title'];
@@ -12,15 +10,11 @@ $image = $_FILES['image'];
 $id = $_GET['id'];
 
 
+//Проверка данных на пустоту
+require_once"function.php";
+checkData($_POST);
 
 
-//Проверка данных
-foreach($_POST as $input) {
-    if(empty($input)) {
-        include 'errors.php';
-        exit;
-    }
-}
 //Картинка не загружена
 if($image['error'] === 4) {
 	$errorMessage = 'Загрузите картинку';
@@ -42,8 +36,9 @@ if(file_exists('uploads/' . $task['image'])) {
         unlink('uploads/' . $task['image']);
 }
 
-//Загрузка картинки в папку uploads
-move_uploaded_file($image['tmp_name'], 'uploads/' . $image['name']);
+//загрузка картинки в папку uploads
+require_once"function.php";
+loadPicture($image);
 
 
 

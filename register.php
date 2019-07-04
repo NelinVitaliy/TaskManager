@@ -6,13 +6,9 @@ $password = $_POST['password'];
 
 
 
-//проверка данных 
-foreach($_POST as $input) {
-if(empty($input)) {
-include 'errors.php';
-exit;
-}
-}
+//Проверка данных на пустоту
+require_once"function.php";
+checkData($_POST);
  
 
 

@@ -1,14 +1,10 @@
 <?php
-//Пропускаем авторизованного пользователя
-session_start();
-
-if(!isset($_SESSION['user_id'])) {
-	exit;
-}
+//Проверка авторизованного пользователя
+require_once"function.php";
+checkLogin(user_id);
 
 //Получение ID
 $id = $_GET['id'];
-
 
 
 //Подготовка и выполнение запроса к БД

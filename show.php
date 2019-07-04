@@ -1,12 +1,9 @@
 <?php
-session_start();
+//Пропускаем авторизованного пользователя
+require_once"function.php";
+checkLogin(user_id);
 
-if(!isset($_SESSION['user_id'])) { 
-    header('Location: /login-form.php');
-    exit;
-}
-
- $id = $_GET['id'];
+$id = $_GET['id'];
 
 //подготовка и выполнение запроса к БД
 $pdo = new PDO('mysql:host=localhost;dbname=task_manager', 'root', '');
@@ -36,12 +33,12 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
   </head>
 
   <body>
-    <div class="form-wrapper text-center">
-      <img src="http://taskmanager/uploads/<?php echo $task['image'];?>" alt="" width="500">
-      <h2><?php echo $task['title'];?></h2>
-      <p>
-        <?php echo $task['description'];?>
-      </p>
+   <div class="form-wrapper text-center">
+      <h3><?php echo $task['title'];?></h3>
+      <p><?php echo $task['description'];?></p>
+      <img src="/uploads/<?php echo $task['image'];?>" width="400">
+      <br>
+      <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Назад</a>
     </div>
   </body>
 </html>

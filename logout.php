@@ -1,12 +1,7 @@
 <?php
-
 //Пропускаем авторизованного пользователя
-session_start();
-
-if(!isset($_SESSION['user_id'])) { 
-	header('Location: /login-form.php');
-	exit;
-}
+require_once"function.php";
+checkLogin(user_id);
 
 //Удаляем данные из сессии
 unset($_SESSION['user_id']);

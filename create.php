@@ -1,9 +1,7 @@
 <?php
-session_start();
-
-if(!isset($_SESSION['user_id'])) { 
-    exit;
-}
+//Проверка авторизованного пользователя
+require_once"function.php";
+checkLogin(user_id);
 
 //Данные из $_POST и $_FILES
  $title = $_POST['title'];
@@ -11,12 +9,8 @@ if(!isset($_SESSION['user_id'])) {
  $image = $_FILES['image'];
 
 //Проверка данных на пустоту
-foreach($_POST as $input) {
-        if(empty($input)) {
-          include 'errors.php';
-        exit;
-    }
-}
+require_once"function.php";
+checkData($_POST);
 
 //Картинка не загружена
 if($image['error'] == 4) {
@@ -26,7 +20,8 @@ if($image['error'] == 4) {
  }
 
 //загрузка картинки в папку uploads
- move_uploaded_file($image['tmp_name'], 'uploads/' . $image['name']);
+require_once"function.php";
+loadPicture($image);
 
 
  //Подготовка и выполнение запроса к БД
